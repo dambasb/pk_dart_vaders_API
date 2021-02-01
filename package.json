@@ -1,0 +1,26 @@
+{
+  "name": "pk-dart-vaders-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dambasb/pk_dart_vaders_API.git"
+  },
+  "author": "Damir Kolobaric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dambasb/pk_dart_vaders_API/issues"
+  },
+  "homepage": "https://github.com/dambasb/pk_dart_vaders_API#readme"
+}
