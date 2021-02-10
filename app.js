@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const db = require('./db')
 
-const User = require('./models/users');
+const usersRoutes = require('./routes/user');
 
 const app = express();
 
@@ -20,12 +20,57 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
-  res.send('Hello World');
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
   next();
 });
 
-app.post("/api/users", (req, res, next) => {
-  res.send('POST');
-})
+app.use('/api/users', usersRoutes);
+
+/* app.post('/api/users', (req, res, next) => {
+  const user = {
+    firstName: 'Test',
+    lastName: 'Test',
+    email: 'Test',
+    password: 'Test'
+  }
+
+  console.log(user);
+
+  res.status(201).json({
+    message: 'User  added!'
+  });
+
+}) */
+
+/* app.use('/api/users', (req, res, next) => {
+  const userTest = [
+    {
+      firstName: 'Test',
+      lastName: 'Test',
+      email: 'Test',
+      password: 'Test'
+    },
+    {
+      firstName: 'Test',
+      lastName: 'Test',
+      email: 'Test',
+      password: 'Test'
+    }
+  ];
+
+  res.status(200).json({
+    message: 'Test user',
+    users: userTest
+  });
+  next();
+}) */
 
 module.exports = app;
