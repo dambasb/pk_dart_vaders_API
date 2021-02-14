@@ -34,43 +34,4 @@ app.use((req, res, next) => {
 
 app.use('/api/users', usersRoutes);
 
-/* app.post('/api/users', (req, res, next) => {
-  const user = {
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'Test',
-    password: 'Test'
-  }
-
-  console.log(user);
-
-  res.status(201).json({
-    message: 'User  added!'
-  });
-
-}) */
-
-/* app.use('/api/users', (req, res, next) => {
-  const userTest = [
-    {
-      firstName: 'Test',
-      lastName: 'Test',
-      email: 'Test',
-      password: 'Test'
-    },
-    {
-      firstName: 'Test',
-      lastName: 'Test',
-      email: 'Test',
-      password: 'Test'
-    }
-  ];
-
-  res.status(200).json({
-    message: 'Test user',
-    users: userTest
-  });
-  next();
-}) */
-
 module.exports = app;
